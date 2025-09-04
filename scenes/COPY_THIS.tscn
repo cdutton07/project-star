@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c7c5p3woxcwaj"]
 
 [ext_resource type="Script" uid="uid://dasumistpp51w" path="res://scripts/player.gd" id="1_klax2"]
-[ext_resource type="Shader" uid="uid://bj52sv4noi8eh" path="res://shaders/prototype.tres" id="2_8jnod"]
+[ext_resource type="Shader" uid="uid://bj52sv4noi8eh" path="res://Shaders/prototype.tres" id="2_8jnod"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1m1m0"]
 size = Vector3(60, 2, 60)

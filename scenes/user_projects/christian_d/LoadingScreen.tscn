@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://vknxb3ocg0i8"]
+
+[ext_resource type="Script" uid="uid://m252m0b8oenn" path="res://scripts/loadingscreen.gd" id="1_cessv"]
+
+[sub_resource type="Gradient" id="Gradient_notvo"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mu44x"]
+gradient = SubResource("Gradient_notvo")
+
+[sub_resource type="LabelSettings" id="LabelSettings_tafce"]
+font_size = 24
+
+[sub_resource type="Gradient" id="Gradient_3txau"]
+colors = PackedColorArray(0.481789, 0.481789, 0.481789, 1, 0.482353, 0.482353, 0.482353, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dr5ps"]
+gradient = SubResource("Gradient_3txau")
+width = 500
+height = 32
+
+[sub_resource type="Gradient" id="Gradient_tkfnu"]
+colors = PackedColorArray(1, 0.357326, 0.290209, 1, 0, 0.517647, 0.501961, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_82kl8"]
+gradient = SubResource("Gradient_tkfnu")
+width = 500
+height = 32
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_cessv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_mu44x")
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -35.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "50%"
+label_settings = SubResource("LabelSettings_tafce")
+horizontal_alignment = 1
+
+[node name="Bar" type="TextureProgressBar" parent="Center/VBox"]
+layout_mode = 2
+step = 0.5
+value = 100.0
+stretch_margin_left = 5
+stretch_margin_top = 5
+stretch_margin_right = 5
+stretch_margin_bottom = 5
+texture_under = SubResource("GradientTexture2D_dr5ps")
+texture_progress = SubResource("GradientTexture2D_82kl8")
