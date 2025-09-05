@@ -27,7 +27,6 @@ func _physics_process(delta):
 	velocity = target_velocity
 	move_and_slide()
 	if Input.is_action_pressed("basic_attack"):
-		await get_tree().create_timer(2).timeout
 		var ls = load("res://scenes/user_projects/christian_d/LoadingScreen.tscn").instantiate()
 		get_tree().root.add_child(ls)
 		ls.change_scene("res://scenes/COPY_THIS.tscn")
